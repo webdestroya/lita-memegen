@@ -16,11 +16,12 @@ gem "lita-memegen"
 
 ## Configuration
 
+You will need to register an account on memegenerator.net and provide the username/password for the account.
+
 ```
 Lita.configure do |config|
   config.handlers.memegen.username = 'username'
   config.handlers.memegen.password = 'password'
-  config.handlers.memegen.dimensions = ''
 end
 ```
 

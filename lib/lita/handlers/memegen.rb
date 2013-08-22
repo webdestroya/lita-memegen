@@ -25,10 +25,10 @@ module Lita
       route %r{(!meme )?(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat, command: false
       route %r{(!meme )?(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like, command: false
       route %r{(!meme )?(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only, command: false
-      route %r{(!meme)?(.*)(NOT IMPRESSED*)}i,                              :meme_not_impressed, command: false
-      route %r{(!meme)?(PREPARE YOURSELF) (.*)}i,                           :meme_prepare_yourself, command: false
-      route %r{(!meme)?(WHAT IF I TOLD YOU) (.*)}i,                         :meme_what_if_i, command: false
-      route %r{(!meme)?(.*) (BETTER DRINK MY OWN PISS)}i,                   :meme_better_drink, command: false
+      route %r{(!meme )?(.*)(NOT IMPRESSED*)}i,                              :meme_not_impressed, command: false
+      route %r{(!meme )?(PREPARE YOURSELF) (.*)}i,                           :meme_prepare_yourself, command: false
+      route %r{(!meme )?(WHAT IF I TOLD YOU) (.*)}i,                         :meme_what_if_i, command: false
+      route %r{(!meme )?(.*) (BETTER DRINK MY OWN PISS)}i,                   :meme_better_drink, command: false
 
 
       def meme_y_u_no(response)

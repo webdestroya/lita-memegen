@@ -20,6 +20,10 @@ You will need to register an account on memegenerator.net and provide the userna
 
 ```
 Lita.configure do |config|
+
+  # This requires that all memes be sent as commands. If this is false, the bot will listen in the channel
+  config.handlers.memegen.command_only = true
+
   config.handlers.memegen.username = 'username'
   config.handlers.memegen.password = 'password'
 end

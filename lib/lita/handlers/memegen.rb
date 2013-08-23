@@ -5,30 +5,31 @@ module Lita
     class Memegen < Handler
 
       def self.default_config(config)
+        config.command_only = true
         config.username = nil
         config.password = nil
       end
       
-      route %r{(!meme )?(Y U NO) (.+)}i,                                    :meme_y_u_no, command: false
-      route %r{(!meme )?(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)}i,        :meme_i_dont_always, command: false
-      route %r{(!meme )?(.*)(O\s?RLY\??.*)}i,                               :meme_orly, command: false
-      route %r{(!meme )?(.*)(SUCCESS|NAILED IT.*)}i,                        :meme_success, command: false
-      route %r{(!meme )?(.*) (ALL the .*)}i,                                :meme_all_the, command: false
-      route %r{(!meme )?(.*) (\w+\sTOO DAMN .*)}i,                          :meme_too_damn, command: false
-      route %r{(!meme )?(GOOD NEWS EVERYONE[,.!]?) (.*)}i,                  :meme_good_news, command: false
-      route %r{(!meme )?(NOT SURE IF .*) (OR .*)}i,                         :meme_not_sure_if, command: false
-      route %r{(!meme )?(YO DAWG .*) (SO .*)}i,                             :meme_yo_dawg, command: false
-      route %r{(!meme )?(ALL YOUR .*) (ARE BELONG TO US)}i,                 :meme_are_belong, command: false
-      route %r{(!meme )?(.*) (FUCK YOU)}i,                                  :meme_fuck_you, command: false
-      route %r{(!meme )?(.*) (You'?re gonna have a bad time)}i,             :meme_bad_time, command: false
-      route %r{(!meme )?(one does not simply) (.*)}i,                       :meme_simply, command: false
-      route %r{(!meme )?(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat, command: false
-      route %r{(!meme )?(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like, command: false
-      route %r{(!meme )?(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only, command: false
-      route %r{(!meme )?(.*)(NOT IMPRESSED*)}i,                              :meme_not_impressed, command: false
-      route %r{(!meme )?(PREPARE YOURSELF) (.*)}i,                           :meme_prepare_yourself, command: false
-      route %r{(!meme )?(WHAT IF I TOLD YOU) (.*)}i,                         :meme_what_if_i, command: false
-      route %r{(!meme )?(.*) (BETTER DRINK MY OWN PISS)}i,                   :meme_better_drink, command: false
+      route %r{(Y U NO) (.+)}i,                                    :meme_y_u_no
+      route %r{(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)}i,        :meme_i_dont_always
+      route %r{(.*)(O\s?RLY\??.*)}i,                               :meme_orly
+      route %r{(.*)(SUCCESS|NAILED IT.*)}i,                        :meme_success
+      route %r{(.*) (ALL the .*)}i,                                :meme_all_the
+      route %r{(.*) (\w+\sTOO DAMN .*)}i,                          :meme_too_damn
+      route %r{(GOOD NEWS EVERYONE[,.!]?) (.*)}i,                  :meme_good_news
+      route %r{(NOT SURE IF .*) (OR .*)}i,                         :meme_not_sure_if
+      route %r{(YO DAWG .*) (SO .*)}i,                             :meme_yo_dawg
+      route %r{(ALL YOUR .*) (ARE BELONG TO US)}i,                 :meme_are_belong
+      route %r{(.*) (FUCK YOU)}i,                                  :meme_fuck_you
+      route %r{(.*) (You'?re gonna have a bad time)}i,             :meme_bad_time
+      route %r{(one does not simply) (.*)}i,                       :meme_simply
+      route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat
+      route %r{(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like
+      route %r{(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only
+      route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed
+      route %r{(PREPARE YOURSELF) (.*)}i,                          :meme_prepare_yourself
+      route %r{(WHAT IF I TOLD YOU) (.*)}i,                        :meme_what_if_i
+      route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink
 
 
       def meme_y_u_no(response)
@@ -115,8 +116,11 @@ module Lita
       private 
 
       def generate_meme(response, generator_id, image_id)
-        line1 = response.matches[0][1]
-        line2 = response.matches[0][2]
+        
+        return if Lita.config.handlers.memegen.command_only && !response.message.command?
+        
+        line1 = response.matches[0][0]
+        line2 = response.matches[0][1]
         return if Lita.config.handlers.memegen.username.nil? || Lita.config.handlers.memegen.password.nil?
         
         http_resp = http.get(

@@ -140,10 +140,12 @@ module Lita
           if data['success']
             response.reply data['result']['instanceImageUrl']
           else
+            Lita.logger.error "#{self.class}: Unable to generate a meme image: #{data.inspect}"
             response.reply "Error: Unable to generate a meme image"
           end
 
         else
+          Lita.logger.error "#{self.class}: Unable to generate a meme image: #{http_resp.body}"
           response.reply "Error: Unable to generate a meme image"
         end
 

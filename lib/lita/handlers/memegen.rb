@@ -14,7 +14,7 @@ module Lita
       route %r{(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)}i,        :meme_i_dont_always
       route %r{(.*)(O\s?RLY\??.*)}i,                               :meme_orly
       route %r{(.*)(SUCCESS|NAILED IT.*)}i,                        :meme_success
-      route %r{(.*) (ALL the .*)}i,                                :meme_all_the
+      route %r{(.*) (ALL the .*)},                                 :meme_all_the
       route %r{(.*) (\w+\sTOO DAMN .*)}i,                          :meme_too_damn
       route %r{(GOOD NEWS EVERYONE[,.!]?) (.*)}i,                  :meme_good_news
       route %r{(NOT SURE IF .*) (OR .*)}i,                         :meme_not_sure_if

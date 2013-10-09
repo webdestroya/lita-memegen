@@ -29,7 +29,8 @@ module Lita
       route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed,    help: { "..NOT IMPRESSED" => "(case insensitive) generates ..NOT IMPRESSED meme" }         
       route %r{(PREPARE YOURSELF) (.*)}i,                          :meme_prepare_yourself, help: { "PREPARE YOURSELF.." => "(case insensitive) generates PREPARE YOURSELF.. meme" }             
       route %r{(WHAT IF I TOLD YOU) (.*)}i,                        :meme_what_if_i,        help: { "WHAT IF I TOLD YOU.." => "(case insensitive) generates WHAT IF I TOLD YOU.. meme" }     
-      route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink,     help: { "..BETTER DRINK MY OWN PISS" => "(case insensitive) generates ..BETTER DRINK MY OWN PISS meme" }         
+      route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink,     help: { "..BETTER DRINK MY OWN PISS" => "(case insensitive) generates ..BETTER DRINK MY OWN PISS meme" }
+      route %r{^khanify (.*)}i,                                    :meme_khanify,          help: { "khanify ..." => "(case insensitive) generates khan meme" }
 
 
       def meme_y_u_no(response)
@@ -112,15 +113,25 @@ module Lita
         generate_meme(response, 92, 89714)
       end
 
+      def meme_khanify(response)
+        generate_meme(response, 6443, 1123022, line1: "", line2: khanify(response.matches[0][0]))
+      end
+
 
       private 
 
-      def generate_meme(response, generator_id, image_id)
-        
+      def khanify(phrase)
+        shouty_phrase = phrase.upcase
+        last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
+        last_vowel = shouty_phrase[last_vowel_index] 
+        "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
+      end
+
+      def generate_meme(response, generator_id, image_id, line1: nil, line2: nil)
         return if Lita.config.handlers.memegen.command_only && !response.message.command?
         
-        line1 = response.matches[0][0]
-        line2 = response.matches[0][1]
+        line1 ||= response.matches[0][0]
+        line2 ||= response.matches[0][1]
         return if Lita.config.handlers.memegen.username.nil? || Lita.config.handlers.memegen.password.nil?
         
         http_resp = http.get(
@@ -150,8 +161,6 @@ module Lita
         end
 
       end
-
-
 
     end
 

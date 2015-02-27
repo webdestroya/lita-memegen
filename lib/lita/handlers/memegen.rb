@@ -117,15 +117,14 @@ module Lita
         generate_meme(response, 6443, 1123022, line1: "", line2: khanify(response.matches[0][0]))
       end
 
-
-      private 
-
       def khanify(phrase)
         shouty_phrase = phrase.upcase
         last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
         last_vowel = shouty_phrase[last_vowel_index]
         "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
       end
+
+      private
 
       def generate_meme(response, generator_id, image_id, line1: nil, line2: nil)
         return if Lita.config.handlers.memegen.command_only && !response.message.command?

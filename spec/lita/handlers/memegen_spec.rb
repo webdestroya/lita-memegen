@@ -41,4 +41,20 @@ describe Lita::Handlers::Memegen, lita_handler: true do
     end
   end
 
+  describe '#khanify' do
+    it 'produces strings that are upcased' do
+      text = subject.khanify 'a'
+      expect(text).to eq text.upcase
+    end
+    it 'adds 11 more of the last vowel' do
+      expect(subject.khanify 'ae').to include 'E'*12
+    end
+    it 'adds 11 more of the last consonant if there are no vowels' do
+      expect(subject.khanify 'tw').to include 'W'*12
+    end
+    it 'adds !!!! to the end' do
+      expect(subject.khanify 'a').to end_with '!!!!'
+    end
+  end
+
 end

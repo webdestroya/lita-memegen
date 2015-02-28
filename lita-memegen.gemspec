@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-memegen"
-  spec.version       = "1.0.4"
+  spec.version       = "1.0.5"
   spec.authors       = ["Mitch Dempsey"]
   spec.email         = ["mitch@mitchdempsey.com"]
   spec.description   = %q{A Lita handler for generating meme images.}

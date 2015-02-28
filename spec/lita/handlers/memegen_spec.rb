@@ -61,140 +61,140 @@ describe Lita::Handlers::Memegen, lita_handler: true do
     let(:response) { double }
     describe '#meme_y_u_no' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 2, 166088
+        expect(MemeGenerator).to receive(:generate_meme).with response, 2, 166088
         subject.meme_y_u_no response
       end
     end
 
     describe '#meme_i_dont_always' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 74, 2485
+        expect(MemeGenerator).to receive(:generate_meme).with response, 74, 2485
         subject.meme_i_dont_always response
       end
     end
 
     describe '#meme_orly' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 920, 117049
+        expect(MemeGenerator).to receive(:generate_meme).with response, 920, 117049
         subject.meme_orly response
       end
     end
 
     describe '#meme_success' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 121, 1031
+        expect(MemeGenerator).to receive(:generate_meme).with response, 121, 1031
         subject.meme_success response
       end
     end
 
     describe '#meme_all_the' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 6013, 1121885
+        expect(MemeGenerator).to receive(:generate_meme).with response, 6013, 1121885
         subject.meme_all_the response
       end
     end
 
     describe '#meme_too_damn' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 998, 203665
+        expect(MemeGenerator).to receive(:generate_meme).with response, 998, 203665
         subject.meme_too_damn response
       end
     end
 
     describe '#meme_good_news' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 1591, 112464
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1591, 112464
         subject.meme_good_news response
       end
     end
 
     describe '#meme_not_sure_if' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 305, 84688
+        expect(MemeGenerator).to receive(:generate_meme).with response, 305, 84688
         subject.meme_not_sure_if response
       end
     end
 
     describe '#meme_yo_dawg' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 79, 108785
+        expect(MemeGenerator).to receive(:generate_meme).with response, 79, 108785
         subject.meme_yo_dawg response
       end
     end
 
     describe '#meme_are_belong' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 349058, 2079825
+        expect(MemeGenerator).to receive(:generate_meme).with response, 349058, 2079825
         subject.meme_are_belong response
       end
     end
 
     describe '#meme_fuck_you' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 1189472, 5044147
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1189472, 5044147
         subject.meme_fuck_you response
       end
     end
 
     describe '#meme_bad_time' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 825296, 3786537
+        expect(MemeGenerator).to receive(:generate_meme).with response, 825296, 3786537
         subject.meme_bad_time response
       end
     end
 
     describe '#meme_simply' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 274947, 1865027
+        expect(MemeGenerator).to receive(:generate_meme).with response, 274947, 1865027
         subject.meme_simply response
       end
     end
 
     describe '#meme_grumpy_cat' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 1590955, 6541210
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1590955, 6541210
         subject.meme_grumpy_cat response
       end
     end
 
     describe '#meme_looks_like' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 20469, 1159769
+        expect(MemeGenerator).to receive(:generate_meme).with response, 20469, 1159769
         subject.meme_looks_like response
       end
     end
 
     describe '#meme_am_i_only' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 953639, 4240352
+        expect(MemeGenerator).to receive(:generate_meme).with response, 953639, 4240352
         subject.meme_am_i_only response
       end
     end
 
     describe '#meme_not_impressed' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 1420809, 5883168
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1420809, 5883168
         subject.meme_not_impressed response
       end
     end
 
     describe '#meme_prepare_yourself' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 414926, 2295701
+        expect(MemeGenerator).to receive(:generate_meme).with response, 414926, 2295701
         subject.meme_prepare_yourself response
       end
     end
 
     describe '#meme_what_if_i' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 1118843, 4796874
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1118843, 4796874
         subject.meme_what_if_i response
       end
     end
 
     describe '#meme_better_drink' do
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 92, 89714
+        expect(MemeGenerator).to receive(:generate_meme).with response, 92, 89714
         subject.meme_better_drink response
       end
     end
@@ -202,7 +202,7 @@ describe Lita::Handlers::Memegen, lita_handler: true do
     describe '#meme_khanify' do
       let(:response) { double matches: [['text']] }
       it 'calls #generate_meme with the correct arguments' do
-        expect(subject).to receive(:generate_meme).with response, 6443, 1123022, line1: '', line2: subject.khanify('text')
+        expect(MemeGenerator).to receive(:generate_meme).with response, 6443, 1123022, line1: '', line2: subject.khanify('text')
         subject.meme_khanify response
       end
     end

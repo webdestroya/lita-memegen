@@ -126,39 +126,8 @@ module Lita
 
       private
 
-      def generate_meme(response, generator_id, image_id, line1: nil, line2: nil)
-        return if Lita.config.handlers.memegen.command_only && !response.message.command?
-
-        line1 ||= response.matches[0][0]
-        line2 ||= response.matches[0][1]
-        return if Lita.config.handlers.memegen.username.nil? || Lita.config.handlers.memegen.password.nil?
-
-        http_resp = http.get(
-          'http://version1.api.memegenerator.net/Instance_Create',
-          username: Lita.config.handlers.memegen.username,
-          password: Lita.config.handlers.memegen.password,
-          languageCode: 'en',
-          generatorID: generator_id,
-          imageID: image_id,
-          text0: line1,
-          text1: line2
-          )
-
-        if http_resp.status == 200
-          data = MultiJson.load(http_resp.body)
-
-          if data['success']
-            response.reply data['result']['instanceImageUrl']
-          else
-            Lita.logger.error "#{self.class}: Unable to generate a meme image: #{data.inspect}"
-            response.reply "Error: Unable to generate a meme image"
-          end
-
-        else
-          Lita.logger.error "#{self.class}: Unable to generate a meme image: #{http_resp.body}"
-          response.reply "Error: Unable to generate a meme image"
-        end
-
+      def generate_meme *args
+        MemeGenerator.generate_meme *args
       end
 
     end

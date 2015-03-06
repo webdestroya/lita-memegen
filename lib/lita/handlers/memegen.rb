@@ -126,7 +126,7 @@ module Lita
       end
 
       def meme_doge(response)
-        generate_meme(response, 9861901, 89714)
+        generate_meme(response, 2452817, 89714)
       end
 
       private

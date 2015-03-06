@@ -125,7 +125,7 @@ module Lita
         "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
       end
 
-      def doge(response)
+      def meme_doge(response)
         generate_meme(response, 9861901, 89714)
       end
 

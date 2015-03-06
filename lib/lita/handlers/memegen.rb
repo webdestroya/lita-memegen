@@ -31,6 +31,7 @@ module Lita
       route %r{(WHAT IF I TOLD YOU) (.*)}i,                        :meme_what_if_i,        help: { "WHAT IF I TOLD YOU.." => "generates WHAT IF I TOLD YOU.. meme" }
       route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink,     help: { "..BETTER DRINK MY OWN PISS" => "generates ..BETTER DRINK MY OWN PISS meme" }
       route %r{^khanify (.*)}i,                                    :meme_khanify,          help: { "khanify ..." => "generates khan meme" }
+      route %r{(.*) (wow)}i,                                       :meme_doge,             help: { "... wow" => "generates doge meme" }
 
 
       def meme_y_u_no(response)
@@ -122,6 +123,10 @@ module Lita
         last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
         last_vowel = shouty_phrase[last_vowel_index]
         "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
+      end
+
+      def doge(response)
+        generate_meme(response, 9861901, 89714)
       end
 
       private

@@ -32,6 +32,7 @@ module Lita
       route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink,     help: { "..BETTER DRINK MY OWN PISS" => "generates ..BETTER DRINK MY OWN PISS meme" }
       route %r{^khanify (.*)}i,                                    :meme_khanify,          help: { "khanify ..." => "generates khan meme" }
       route %r{(.*) (wow)}i,                                       :meme_doge,             help: { "... wow" => "generates doge meme" }
+      route %r{(Imma let you finish) (.*)}i,                       :meme_kanye,            help: { "Imma let you finish ..." => "generates kanye meme"}
 
 
       def meme_y_u_no(response)
@@ -127,6 +128,10 @@ module Lita
 
       def meme_doge(response)
         generate_meme(response, 2452817, 9861901)
+      end
+
+      def meme_kanye(response)
+        generate_meme(response, 1988183, 8275549)
       end
 
       private

@@ -54,6 +54,7 @@ end
 * `WHAT IF I TOLD YOU <text>` - Generates Morpheus
 * `<text> BETTER DRINK MY OWN PISS` - Generates Bear Grylls
 * '<text> wow' - Generates Doge
+* 'Imma let you finish <text>' - Generates Kanye West
 
 ## License
 

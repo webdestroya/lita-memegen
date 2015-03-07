@@ -31,7 +31,9 @@ describe Lita::Handlers::Memegen, lita_handler: true do
       meme_prepare_yourself: ["prepare yourself blah"],
       meme_what_if_i: ["what if i told you blah"],
       meme_better_drink: ["blah better drink my own piss"],
-      meme_khanify: ["khanify blah"]
+      meme_khanify: ["khanify blah"],
+      meme_doge: ["blah wow"],
+      meme_kanye: ["imma let you finish blah"]
     }
 
     ROUTES.each do |method, commands|
@@ -204,6 +206,20 @@ describe Lita::Handlers::Memegen, lita_handler: true do
       it 'calls #generate_meme with the correct arguments' do
         expect(MemeGenerator).to receive(:generate_meme).with response, 6443, 1123022, line1: '', line2: subject.khanify('text')
         subject.meme_khanify response
+      end
+    end
+
+    describe '#meme_doge' do
+      it 'calls #generate_meme with the correct arguments' do
+        expect(MemeGenerator).to receive(:generate_meme).with response, 2452817, 9861901
+        subject.meme_doge response
+      end
+    end
+
+    describe '#meme_kanye' do
+      it 'calls #generate_meme with the correct arguments' do
+        expect(MemeGenerator).to receive(:generate_meme).with response, 1988183, 8275549
+        subject.meme_kanye response
       end
     end
   end

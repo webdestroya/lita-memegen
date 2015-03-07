@@ -32,7 +32,7 @@ describe Lita::Handlers::Memegen, lita_handler: true do
       meme_what_if_i: ["what if i told you blah"],
       meme_better_drink: ["blah better drink my own piss"],
       meme_khanify: ["khanify blah"],
-      meme_doge: ["blah wow"],
+      meme_doge: ["wow such blah"],
       meme_kanye: ["imma let you finish blah"]
     }
 

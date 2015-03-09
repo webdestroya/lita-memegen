@@ -32,7 +32,8 @@ end
 ## Usage
 
 * `Y U NO <text>` - Generates the Y U NO GUY with the bottom caption of <text>
-* `I don't always <something> but when i do <text>` - Generates The Most Interesting man in * `<text> ORLY?` - Generates the ORLY? owl with the top caption of <text>
+* `I don't always <something> but when i do <text>` - Generates The Most Interesting man in
+* `<text> ORLY?` - Generates the ORLY? owl with the top caption of <text>
 * `<text> (SUCCESS|NAILED IT)` - Generates success kid with the top caption of <text>
 * `<text> ALL the <things>` - Generates ALL THE THINGS
 * `<text> TOO DAMN <high>` - Generates THE RENT IS TOO DAMN HIGH guy
@@ -52,6 +53,8 @@ end
 * `PREPARE YOURSELF <text>` - Generates GoT
 * `WHAT IF I TOLD YOU <text>` - Generates Morpheus
 * `<text> BETTER DRINK MY OWN PISS` - Generates Bear Grylls
+* '<text> wow' - Generates Doge
+* 'Imma let you finish <text>' - Generates Kanye West
 
 ## License
 

@@ -10,26 +10,26 @@ module Lita
         config.password = nil
       end
 
-      route %r{(Y U NO) (.+)}i,                                    :meme_y_u_no,           help: { "Y U NO..." => "generates Y U NO meme"}
-      route %r{(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)}i,        :meme_i_dont_always,    help: { "I DON'T ALWAYS .. BUT WHEN I DO, .." => "generates I DON'T ALWAY meme"}
-      route %r{(.*)(O\s?RLY\??.*)}i,                               :meme_orly,             help: { "..O RLY.." => "generates O RLY meme" }
-      route %r{(.*)(SUCCESS|NAILED IT.*)},                         :meme_success,          help: { "..SUCCESS.." => "(case sensitive) generates SUCCESS meme", "..NAILED IT.." => "generates NAILED IT meme" }
-      route %r{(.*) (ALL the .*)},                                 :meme_all_the,          help: { "ALL the.." => "(case sensitive) generates ALL the <things> meme" }
-      route %r{(.*) (\w+\sTOO DAMN .*)}i,                          :meme_too_damn,         help: { "TOO DAMN.." => "generates TOO DAMN meme" }
-      route %r{(GOOD NEWS EVERYONE[,.!]?) (.*)}i,                  :meme_good_news,        help: { "GOOD NEWS EVERYONE.." => "generates GOOD NEWS EVERYONE meme" }
-      route %r{(NOT SURE IF .*) (OR .*)}i,                         :meme_not_sure_if,      help: { "NOT SURE IF.. OR.." => "generates NOT SURE IF .. OR meme" }
-      route %r{(YO DAWG .*) (SO .*)}i,                             :meme_yo_dawg,          help: { "YO DAWG.." => "generates YO DAWG meme" }
-      route %r{(ALL YOUR .*) (ARE BELONG TO US)}i,                 :meme_are_belong,       help: { "ALL YOUR.. ARE BELONG TO US" => "generates ALL YOUR.. ARE BELONG TO US meme" }
-      route %r{(.*) (FUCK YOU)}i,                                  :meme_fuck_you,         help: { "..FUCK YOU" => "generates ..FUCK YOU meme" }
-      route %r{(.*) (You'?re gonna have a bad time)}i,             :meme_bad_time,         help: { ".. You're going have a bad time" => "generates You're gonna have a bad time meme" }
-      route %r{(one does not simply) (.*)}i,                       :meme_simply,           help: { "one does not simply.." => "generates one does not simply.. meme" }
-      route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat,       help: { "grumpy cat .. , .." => "generates grumpy cat .. , .. meme" }
-      route %r{(it looks like you'?re|it looks like you) (.*)}i,    :meme_looks_like,       help: { "it looks like you're .." => "generates it looks like you're .. meme", "it looks like you.." => "(case insensitive) generates it looks like you.. meme" }
-      route %r{(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only,        help: { "AM I THE ONLY ONE AROUND HERE.." => "generates AM I THE ONLY ONE AROUND HERE.. meme" }
-      route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed,    help: { "..NOT IMPRESSED" => "generates ..NOT IMPRESSED meme" }
-      route %r{(PREPARE YOURSELF) (.*)}i,                          :meme_prepare_yourself, help: { "PREPARE YOURSELF.." => "generates PREPARE YOURSELF.. meme" }
-      route %r{(WHAT IF I TOLD YOU) (.*)}i,                        :meme_what_if_i,        help: { "WHAT IF I TOLD YOU.." => "generates WHAT IF I TOLD YOU.. meme" }
-      route %r{(.*) (BETTER DRINK MY OWN PISS)}i,                  :meme_better_drink,     help: { "..BETTER DRINK MY OWN PISS" => "generates ..BETTER DRINK MY OWN PISS meme" }
+      route %r{(y u no) (.+)}i,                                    :meme_y_u_no,           help: { "y u no..." => "generates Y U NO meme"}
+      route %r{(i don'?t always .*) (but when i do,? .*)}i,        :meme_i_dont_always,    help: { "i don't always... but when i do,..." => "generates I DON'T ALWAYS meme"}
+      route %r{(.*)(o\s?rly\??.*)}i,                               :meme_orly,             help: { "...o rly..." => "generates O RLY meme" }
+      route %r{(.*)(SUCCESS|NAILED IT.*)},                         :meme_success,          help: { "...SUCCESS" => "(case sensitive) generates SUCCESS meme", "...NAILED IT..." => "(case sensitive) generates NAILED IT meme" }
+      route %r{(.*) (ALL the .*)},                                 :meme_all_the,          help: { "...ALL the..." => "(case sensitive) generates ALL the <things> meme" }
+      route %r{(.*) (\w+\stoo damn .*)}i,                          :meme_too_damn,         help: { "...too damn..." => "generates TOO DAMN meme" }
+      route %r{(good news everyone[,.!]?) (.*)}i,                  :meme_good_news,        help: { "good news everyone..." => "generates GOOD NEWS EVERYONE meme" }
+      route %r{(not sure if .*) (or .*)}i,                         :meme_not_sure_if,      help: { "not sure if... or..." => "generates NOT SURE IF... OR meme" }
+      route %r{(yo dawg .*) (so .*)}i,                             :meme_yo_dawg,          help: { "yo dawg... so..." => "generates YO DAWG meme" }
+      route %r{(all your .*) (are belong to us)}i,                 :meme_are_belong,       help: { "all your... are belong to us" => "generates ALL YOUR... ARE BELONG TO US meme" }
+      route %r{(.*) (fuck you)}i,                                  :meme_fuck_you,         help: { "...fuck you" => "generates ...FUCK YOU meme" }
+      route %r{(.*) (you'?re gonna have a bad time)}i,             :meme_bad_time,         help: { "...you're going have a bad time" => "generates You're gonna have a bad time meme" }
+      route %r{(one does not simply) (.*)}i,                       :meme_simply,           help: { "one does not simply..." => "generates one does not simply... meme" }
+      route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat,       help: { "grumpy cat... ,..." => "generates grumpy cat... ,... meme" }
+      route %r{(it looks like you'?re|it looks like you) (.*)}i,   :meme_looks_like,       help: { "it looks like you're..." => "generates it looks like you're... meme", "it looks like you..." => "(case insensitive) generates it looks like you.. meme" }
+      route %r{(am i the only one around here) (.*)}i,             :meme_am_i_only,        help: { "am I the only one around here..." => "generates AM I THE ONLY ONE AROUND HERE... meme" }
+      route %r{(.*)(not impressed*)}i,                             :meme_not_impressed,    help: { "...not impressed" => "generates ...NOT IMPRESSED meme" }
+      route %r{(prepare yourself) (.*)}i,                          :meme_prepare_yourself, help: { "prepare yourself..." => "generates PREPARE YOURSELF... meme" }
+      route %r{(what if i told you) (.*)}i,                        :meme_what_if_i,        help: { "what if I told you..." => "generates WHAT IF I TOLD YOU... meme" }
+      route %r{(.*) (better drink my own piss)}i,                  :meme_better_drink,     help: { "..better drink my own piss" => "generates ...BETTER DRINK MY OWN PISS meme" }
       route %r{^khanify (.*)}i,                                    :meme_khanify,          help: { "khanify ..." => "generates khan meme" }
       route %r{(so.*|very.*|much.*|such.*) (wow)}i,                                       :meme_doge,             help: { "so|very|much|such... wow" => "generates doge meme" }
       route %r{(Imma let you finish) (.*)}i,                       :meme_kanye,            help: { "Imma let you finish ..." => "generates kanye meme"}

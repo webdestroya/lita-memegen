@@ -31,7 +31,7 @@ module Lita
       route %r{(what if i told you) (.*)}i,                        :meme_what_if_i,        help: { "what if I told you..." => "generates WHAT IF I TOLD YOU... meme" }
       route %r{(.*) (better drink my own piss)}i,                  :meme_better_drink,     help: { "..better drink my own piss" => "generates ...BETTER DRINK MY OWN PISS meme" }
       route %r{^khanify (.*)}i,                                    :meme_khanify,          help: { "khanify ..." => "generates khan meme" }
-      route %r{(so.*|very.*|much.*|such.*) (wow)}i,                                       :meme_doge,             help: { "so|very|much|such... wow" => "generates doge meme" }
+      route %r{(so|very|much|such) (.*) wow}i,                     :meme_doge,             help: { "so|very|much|such... wow" => "generates doge meme" }
       route %r{(imma let you finish) (.*)}i,                       :meme_kanye,            help: { "imma let you finish ..." => "generates kanye meme" }
 
 
@@ -127,7 +127,7 @@ module Lita
       end
 
       def meme_doge(response)
-        generate_meme(response, 2452817, 9861901)
+        generate_meme(response, 2452817, 9861901, line1: "#{response.matches[0][0]} #{response.matches[0][1]}", line2: 'wow')
       end
 
       def meme_kanye(response)

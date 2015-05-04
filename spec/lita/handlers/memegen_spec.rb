@@ -210,8 +210,9 @@ describe Lita::Handlers::Memegen, lita_handler: true do
     end
 
     describe '#meme_doge' do
+      let(:response) { double matches: [['such', 'text']] }
       it 'calls #generate_meme with the correct arguments' do
-        expect(MemeGenerator).to receive(:generate_meme).with response, 2452817, 9861901
+        expect(MemeGenerator).to receive(:generate_meme).with response, 2452817, 9861901, line1: 'such text', line2: 'wow'
         subject.meme_doge response
       end
     end

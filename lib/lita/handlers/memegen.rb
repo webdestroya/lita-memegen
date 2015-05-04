@@ -20,7 +20,7 @@ module Lita
       route %r{(not sure if .*) (or .*)}i,                         :meme_not_sure_if,      help: { "not sure if... or..." => "generates NOT SURE IF... OR meme" }
       route %r{(yo dawg .*) (so .*)}i,                             :meme_yo_dawg,          help: { "yo dawg... so..." => "generates YO DAWG meme" }
       route %r{(all your .*) (are belong to us)}i,                 :meme_are_belong,       help: { "all your... are belong to us" => "generates ALL YOUR... ARE BELONG TO US meme" }
-      route %r{(.*) (fuck you)}i,                                  :meme_fuck_you,         help: { "...fuck you" => "generates ...FUCK YOU meme" }
+      route %r{(.*) (fuck you)$}i,                                 :meme_fuck_you,         help: { "...fuck you" => "generates ...FUCK YOU meme" }
       route %r{(.*) (you'?re gonna have a bad time)}i,             :meme_bad_time,         help: { "...you're going have a bad time" => "generates You're gonna have a bad time meme" }
       route %r{(one does not simply) (.*)}i,                       :meme_simply,           help: { "one does not simply..." => "generates one does not simply... meme" }
       route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat,       help: { "grumpy cat... ,..." => "generates grumpy cat... ,... meme" }

@@ -139,7 +139,7 @@ module Lita
       private
 
       def generate_meme *args
-        MemeGenerator.generate_meme *args
+        MemeGenerator.generate_meme(*args)
       end
     end
 

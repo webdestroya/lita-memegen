@@ -123,7 +123,7 @@ module Lita
         shouty_phrase = phrase.upcase
         last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
         last_vowel = shouty_phrase[last_vowel_index]
-        "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
+        "#{shouty_phrase[0..last_vowel_index]}#{last_vowel * 10}#{shouty_phrase[last_vowel_index..-1]}!!!!"
       end
 
       def meme_doge(response)

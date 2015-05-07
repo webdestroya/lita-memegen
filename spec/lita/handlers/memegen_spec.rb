@@ -32,7 +32,7 @@ describe Lita::Handlers::Memegen, lita_handler: true do
       meme_what_if_i: ["what if i told you blah"],
       meme_better_drink: ["blah better drink my own piss"],
       meme_khanify: ["khanify blah"],
-      meme_doge: ["such blah wow"],
+      meme_doge: ["such blah much wat wow"],
       meme_kanye: ["imma let you finish blah"]
     }
 
@@ -210,9 +210,9 @@ describe Lita::Handlers::Memegen, lita_handler: true do
     end
 
     describe '#meme_doge' do
-      let(:response) { double matches: [['such', 'text']] }
+      let(:response) { double matches: [['such', 'text', 'much', 'other']] }
       it 'calls #generate_meme with the correct arguments' do
-        expect(MemeGenerator).to receive(:generate_meme).with response, 2452817, 9861901, line1: 'such text', line2: 'wow'
+        expect(MemeGenerator).to receive(:generate_meme).with response, 2452817, 9861901, line1: 'such text', line2: 'much other wow'
         subject.meme_doge response
       end
     end
